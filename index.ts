@@ -29,21 +29,22 @@ const searchJobs = async (keyword: string) => {
 
     console.log(`\nFound ${data.hits.length} jobs`);
     console.log("-".repeat(50));
-    //console.log(data);
+    // console.log(data);
     // console.log(response)
+    // console.dir(data, { depth: 3 }) 
 
     data.hits.forEach((job: job, index: number) => {
       const pubDate = new Date(job.publication_date);
       //console.log("pubDate: ", pubDate);
 
-      console.log(`${index + 1}. ${job.headline}`);
-      console.log(`Company: ${job.employer.name}`);
-      console.log(`Location: ${job.workplace_address.municipality}`);
-      console.log(`Publication: ${pubDate.toISOString().split("T")[0]}`);
-      console.log("-".repeat(50));
+      // console.log(`${index + 1}. ${job.headline}`);
+      // console.log(`Company: ${job.employer.name}`);
+      // console.log(`Location: ${job.workplace_address.municipality}`);
+      // console.log(`Publication: ${pubDate.toISOString().split("T")[0]}`);
+      // console.log("-".repeat(50));
     });
   } catch (error) {
-    console.error(error);
+    console.error("error happend"); // change error message
   }
 };
 
