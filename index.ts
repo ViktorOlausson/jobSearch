@@ -48,9 +48,11 @@ const searchJobs = async (keyword: string) => {
 
 const runApp = () => {
   try {
+    let profession: string = "Software Developer"
+    let city: string = "Stockholm"
     console.log("Welcome to the Job Search App!");
     console.log("This app searches for jobs using JobTeach API");
-    const keyword = "Stockholm";
+    const keyword: string = `${profession} in ${city}`;
     searchJobs(keyword);
   } catch (error) {
     console.error(error);
