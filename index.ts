@@ -31,7 +31,7 @@ const runApp = () => {
   try {
     console.log("Welcome to the Job Search App!");
     console.log("This app searches for jobs using JobTeach API");
-    const keyword = "Helsingborg";
+    const keyword = "Stockholm";
     searchJobs(keyword);
   } catch (error) {
     console.error(error);
