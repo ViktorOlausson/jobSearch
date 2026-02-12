@@ -22,12 +22,13 @@ interface dataInterface{
 
 const searchJobs = async (keyword: string) => {
   try {
-    const url:string = `https://jobsearch.api.jobtechdev.se/search?q=${keyword}&offset=0&limit=10`;
+    const url: string = `https://jobsearch.api.jobtechdev.se/search?q=${keyword}&offset=0&limit=10`;
+    console.log(url)
     const response:Response = await fetch(url);
     const data:dataInterface = await response.json();
 
-    //console.log(`\nFound ${data.hits.length} jobs`);
-    //console.log("-".repeat(50));
+    console.log(`\nFound ${data.hits.length} jobs`);
+    console.log("-".repeat(50));
     //console.log(data);
     // console.log(response)
 
