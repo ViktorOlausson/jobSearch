@@ -1,18 +1,37 @@
 // A function that searches for jobs
 // A function that runs our app
 // the command to start everything
+interface employer{
+  name: string
+}
+
+interface workplace{
+  municipality: string
+}
+
+interface job{
+  publication_date: string,
+  headline: string,
+  employer: employer,
+  workplace_address: workplace
+}
+
+interface dataInterface{
+  hits: job[]
+}
 
 const searchJobs = async (keyword: string) => {
   try {
-    const result = `https://jobsearch.api.jobtechdev.se/search?q=${keyword}&offset=0&limit=10`;
-    const response = await fetch(result);
-    const data = await response.json();
+    const url:string = `https://jobsearch.api.jobtechdev.se/search?q=${keyword}&offset=0&limit=10`;
+    const response:Response = await fetch(url);
+    const data:dataInterface = await response.json();
 
-    console.log(`\nFound ${data.hits.length} jobs`);
-    console.log("-".repeat(50));
+    //console.log(`\nFound ${data.hits.length} jobs`);
+    //console.log("-".repeat(50));
     //console.log(data);
+    // console.log(response)
 
-    data.hits.forEach((job: any, index: number) => {
+    data.hits.forEach((job: job, index: number) => {
       const pubDate = new Date(job.publication_date);
       //console.log("pubDate: ", pubDate);
 
