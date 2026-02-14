@@ -15,8 +15,8 @@ export default defineConfig([
   tseslint.configs.recommended,
   {
     rules: {
-      "@typescript-eslint/no-unused-vars": "off",
-      "no-undef": "warn",
+      "@typescript-eslint/no-unused-vars": "error",
+      "no-undef": "error",
       "arrow-body-style": ["error", "always"],
       "prettier/prettier": ["error", { semi: true }],
       "prefer-template": "error",
